@@ -1,7 +1,9 @@
 package prog2.exercise4.flight.booking.system;
 
-
-
+/**
+ * Hello world!
+ *
+ */
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -13,21 +15,21 @@ public class Main
     public static void main( String[] args)
     {
         Scanner myscanner = new Scanner(System.in);
-        FlightBooking a= new FlightBooking("null", depart, returnDate, 2, 3); 
+        FlightBooking fb = new FlightBooking("null", depart, returnDate, 2, 3); 
        
         System.out.println("Please pick the number of class you would like to travel in " );
         System.out.println("1." + "First");
         System.out.println("2." + "Business");
         System.out.println("3." + "Economy");
         String num1 = myscanner.nextLine();
-        a.setBookingClass(num1);
-        FlightBooking.BookingClass BookingClass = a.getBookingclass();
+        fb.setBookingClass(num1);
+        FlightBooking.BookingClass BookingClass = fb.getBookingclass();
         
        
         System.out.println("Please pick the choice(number) of 1.One way /n 2.Return ");
         String num2 = myscanner.nextLine();
-        a.setTripType(num2);
-        FlightBooking.TripType triptype = a.getTriptype();
+        fb.setTripType(num2);
+        FlightBooking.TripType triptype = fb.getTriptype();
 
 
          System.out.println("Please pick the number of tripsouce you would like to travel" );
@@ -38,10 +40,11 @@ public class Main
          System.out.println("5." + "Shanghai");
          System.out.println("6." + "Paris");
          String num = myscanner.nextLine();
-         a.setTripSource(num);
-        FlightBooking.TripSource result = a.getTripSource();
+         fb.setTripSource(num);
+        FlightBooking.TripSource result = fb.getTripSource();
 
-        a.setSourceAirport(result);
+        fb.setSourceAirport(result);
+       
 
         
          System.out.println("Please pick the number of tripdestination you would like to go" );
@@ -52,24 +55,24 @@ public class Main
          System.out.println("5." + "Shanghai");
          System.out.println("6." + "Paris");
          String num3 = myscanner.nextLine();
-         a.setTripDestination(num,num3);
-        FlightBooking.TripDestination result2 = a.getTripDestination();
+         fb.setTripDestination(num,num3);
+        FlightBooking.TripDestination result2 = fb.getTripDestination();
 
-        a.setDestinationAirport(result2);
-        
+        fb.setDestinationAirport(result2);
+     
         
         System.out.println("Please input your date of departure:");
         String sta = myscanner.nextLine();
         LocalDate departure = LocalDate.parse(sta);
-        a.setDepartureDate(departure);
-        LocalDate departureDate = a.getDepartingDate();
+        fb.setDepartureDate(departure);
+        LocalDate departureDate = fb.getDepartingDate();
         System.out.println("Please input your date of returning:");
         String sta2 = myscanner.nextLine();
         LocalDate returningDate = LocalDate.parse(sta2);
-        a.setReturnDate(returningDate);
-        LocalDate returningDate2 = a.getReturnDate();
+        fb.setReturnDate(returningDate);
+        LocalDate returningDate2 = fb.getReturnDate();
 
-        String ticketNumber = a.getTicketNumber();
+        String ticketNumber = fb.getTicketNumber();
         
         System.out.println("Dear passenger please input Your FullName:");
         String passengerFullName = myscanner.nextLine();
@@ -78,14 +81,14 @@ public class Main
         System.out.println("Dear passenger please input the number of adultpassengers:");
         int adultpassengers = myscanner.nextInt();
         myscanner.close();
-        String company = a.getFlightCompany();
-        a.setTotalPassengers(adultpassengers, childpassengers);
-        int totalPassengers = a.getTotalPassengers();
+        String company = fb.getFlightCompany();
+        fb.setTotalPassengers(adultpassengers, childpassengers);
+        int totalPassengers = fb.getTotalPassengers();
 
-        a.setDepartingTicketPrice(childpassengers,adultpassengers);
-        a.setReturnTicketPrice();
-        a.setTotalTicketPrice();
-        double totalTicketPrice = a.getTotalTicketPrice();
+        fb.setDepartingTicketPrice(childpassengers,adultpassengers);
+        fb.setReturnTicketPrice();
+        fb.setTotalTicketPrice();
+        double totalTicketPrice = fb.getTotalTicketPrice();
       
        if(returningDate != returningDate2){
         System.out.println("Dear " + passengerFullName + ". Thank you for booking your flight with " +  

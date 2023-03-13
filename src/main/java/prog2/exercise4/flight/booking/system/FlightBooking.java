@@ -1,17 +1,17 @@
-+package prog2.exercise4.flight.booking.system;
+package prog2.exercise4.flight.booking.system;
 import java.time.LocalDate;
 
 public class FlightBooking {
 private String flightCompany = "Flights-of-Fancy";
-private String flightID = "lwp12138";
-private String PassengerFullName;
+private String flightID = "lkjaue79dc8";
+private String passengerFullName;
 private double departingTicketPrice;
 private double returnTicketPrice;
 private double totalTicketPrice; private String ticketNumber;
 private LocalDate departureDate;
 private LocalDate returnDate;
-private int ChildPassengers;
-private int AdultPassengers;
+private int childPassengers;
+private int adultPassengers;
 private int totalPassengers;
 private BookingClass Bookingclass;
 private TripSource Tripsource;
@@ -23,9 +23,9 @@ private TripDestination Tripdestination;
 
 
 public static String usingMath(int length) {
-    String zimu = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    String shuzi= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     String numbers = "0123456789";
-    String allCharacters = zimu + numbers;
+    String allCharacters = shuzi + numbers;
     StringBuilder a = new StringBuilder();
     for (int i = 0; i < length; i++) {
         int randomIndex = (int) (Math.random() * allCharacters.length());
@@ -58,12 +58,12 @@ public static String usingMath(int length) {
         Nanjing_Lukou_International_Airport, Beijing_Capital_International_Airport, Shanghai_Pudong_International_Airport, Oulu_Airport, Helsinki_Airport, Paris_Charles_de_Gaulle_Airport;
     }
 
-    public FlightBooking(String PassengerFullName, LocalDate depart, LocalDate returnDate, int ChildPassengers, int AdultPassengers) {
-        this.PassengerFullName = PassengerFullName;
+    public FlightBooking(String passengerFullName, LocalDate depart, LocalDate returnDate, int childPassengers, int adultPassengers) {
+        this.passengerFullName = passengerFullName;
         this.departureDate = depart;
         this.returnDate = returnDate;
-        this.ChildPassengers = ChildPassengers;
-        this.AdultPassengers = AdultPassengers;
+        this.childPassengers = childPassengers;
+        this.adultPassengers = adultPassengers;
          
     }
 
@@ -74,29 +74,29 @@ public static String usingMath(int length) {
     public String getFlightID()  {
         return flightID;
     }
-    public void setPassengerFullName(String PassengerFullName) {
-        this.PassengerFullName = PassengerFullName;
+    public void setPassengerFullName(String passengerFullName) {
+        this.passengerFullName = passengerFullName;
     }
     public String getPassengerFullName() {
-        return PassengerFullName;
+        return passengerFullName;
     }
     
-    public void setChildPassengers(int ChildPassengers) {
-        this.ChildPassengers = ChildPassengers;
+    public void setChildPassengers(int childPassengers) {
+        this.childPassengers = childPassengers;
     }
     public int getChildrenPassengers() {
-        return ChildPassengers;
+        return childPassengers;
     }
-    public void setAdultPassengers(int AdultPassengers) {
-        this.AdultPassengers = AdultPassengers;
+    public void setAdultPassengers(int adultPassengers) {
+        this.adultPassengers = adultPassengers;
     }
     public int getAdultPassengers() {
-        return AdultPassengers;
+        return adultPassengers;
     }
 
 
-    public void setTotalPassengers(int AdultPassengers,int ChildPassengers){
-        this.totalPassengers = AdultPassengers + ChildPassengers;
+    public void setTotalPassengers(int adultPassengers,int childPassengers){
+        this.totalPassengers = adultPassengers + childPassengers;
         }
     public int getTotalPassengers() {
         return totalPassengers;
@@ -365,7 +365,7 @@ public static String usingMath(int length) {
     }
 
     public String toString() {
-        return "Dear " + PassengerFullName + ". Thank you for booking your flight with " +  flightCompany + 
+        return "Dear " + passengerFullName + ". Thank you for booking your flight with " +  flightCompany + 
         ". Following are the details of your booking and the trip:" + "\n" +  
         "Ticket Number: " + ticketNumber + "\n" +  
         "From " + Tripsource + " to " + Tripdestination + "\n" + 
@@ -375,6 +375,3 @@ public static String usingMath(int length) {
         "Total ticket price in Euros: " + totalTicketPrice;}
 
 }
-
-
-
